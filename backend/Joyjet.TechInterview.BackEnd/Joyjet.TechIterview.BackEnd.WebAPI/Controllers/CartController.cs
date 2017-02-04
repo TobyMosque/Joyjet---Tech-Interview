@@ -25,6 +25,9 @@ namespace Joyjet.TechIterview.BackEnd.WebAPI.Controllers
         [HttpPost]
         public ResponseModel ProcessCarts(RequestModel request)
         {
+            if (request.Discounts == null)
+                request.Discounts = new List<Discount>();
+
             // Indexing Articles to easely search for Prices and Discounts (Tech Interview Level 1 and 3);
             var articles = (
                 from article in request.Articles

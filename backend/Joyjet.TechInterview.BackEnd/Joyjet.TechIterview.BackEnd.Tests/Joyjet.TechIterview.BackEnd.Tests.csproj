@@ -102,24 +102,24 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <Content Include="Resources\Level1\data.json">
+    <EmbeddedResource Include="Resources\Level1\data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Level1\output.json">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Level1\output.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Level2\data.json">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Level2\data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Level2\output.json">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Level2\output.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Level3\data.json">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Level3\data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Level3\output.json">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Level3\output.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
