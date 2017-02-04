@@ -114,9 +114,9 @@
     <Content Include="Resources\Level2\output.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Compile Include="Resources\Level3\data.json">
+    <Content Include="Resources\Level3\data.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
+    </Content>
     <Content Include="Resources\Level3\output.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
