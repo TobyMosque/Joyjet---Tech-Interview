@@ -1,0 +1,99 @@
+﻿header div, .nav-wrapper {
+    position: relative;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: calc(100% - 20px);
+    max-width: 1140px;
+}
+
+header, .nav-wrapper {
+    position: fixed;
+    top: 0px;
+    width: 100%;    
+    height: 64px;    
+    z-index: 99;
+}
+
+.nav-wrapper nav a {
+    color: white;
+    text-decoration: inherit;
+}
+
+header {
+    transition: background-color 500ms linear;
+}
+
+header #menu, header #logo {
+    float: left;
+    background-size: calc(100% - 20px);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 64px;
+    width: 64px;
+}
+
+header #logo {    
+    background-image: url('../Images/47971.svg');    
+}
+
+header #menu {   
+    float: right; 
+    display: none;
+    background-image: url('../Images/60510.svg');    
+}
+
+header.close #menu {    
+    background-image: url('../Images/61155.svg');    
+}
+
+.vp-extra-small header #menu, 
+.vp-small header #menu {
+    display: block;
+}
+
+.vp-extra-small header.close, 
+.vp-small header.close,
+header.blue {
+    background-color: #2979FF;
+}
+
+.nav-wrapper nav {
+    float: right;
+    height: 100%;
+    padding: 20px 0px;
+}
+
+.nav-wrapper nav a {    
+    padding: 0px 10px;
+    line-height: 24px;
+}
+
+
+.vp-extra-small .nav-wrapper,
+.vp-small .nav-wrapper {    
+    background-color: #2979FF;
+    top: 64px;
+    left: 100%;
+    height: calc(100% - 64px);
+    width: 100%;
+    transition: left 500ms linear;
+}
+
+.vp-extra-small .nav-wrapper.open,
+.vp-small .nav-wrapper.open  {    
+    left: 0px;
+}
+
+.vp-extra-small .nav-wrapper nav,
+.vp-small .nav-wrapper nav {
+    float: none;
+    width: 100%;
+}
+
+.vp-extra-small .nav-wrapper a,
+.vp-small .nav-wrapper a {
+    text-align: center;
+    line-height: 64px;
+    display: block;
+}

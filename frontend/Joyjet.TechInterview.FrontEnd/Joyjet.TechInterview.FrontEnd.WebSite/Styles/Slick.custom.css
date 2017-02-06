@@ -1,0 +1,70 @@
+﻿.slick-arrow {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.slick-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    float: left;
+    height: 32px;
+    width: 32px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slick-next {
+    right: 0px;
+    background-image: url('../Images/60758.svg');
+}
+
+.slick-prev {
+    left: 0px;
+    background-image: url('../Images/60965.svg');
+}
+
+/* Dots */
+.slick-dots {
+    padding: 0px;   
+}
+
+.slick-dot {
+    width: 24px;
+    height:24px;
+    border-radius: 50%;
+    background-color: silver;
+}
+
+.slick-active .slick-dot {
+    background-color: #2979FF;
+}
+
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li
+{
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}

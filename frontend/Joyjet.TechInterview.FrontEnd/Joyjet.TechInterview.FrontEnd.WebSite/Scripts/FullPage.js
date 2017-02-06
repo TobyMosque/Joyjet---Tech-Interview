@@ -13,11 +13,17 @@
         this.container.addEventListener("transitionend", this.onTransitionEnd.bind(this));
 
         var css = [].reduce.call(this.panels, function (css, panel, index) {
-            return `${css}
+            //uglify nao suporta interpolação.
+            /*return `${css}
                 ${that.selector}[data-panel='${index + 1}'] {
                     transform: translateY(${-100 * index}%);
                 }
-            `;
+            `;*/
+            return css + "\n\
+                " + that.selector + "[data-panel='" + (index + 1) + "'] {\n\
+                    transform: translateY(" + (-100 * index ) + "%);\n\
+                }\n\
+            ";
         }, "");
 
         var blob = new Blob([css], { type: 'text/css' });

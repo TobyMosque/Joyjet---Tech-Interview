@@ -1,0 +1,48 @@
+﻿.about-img {
+    float: left;
+    width: calc(100% - 20px);
+    margin: 10px;
+    height: 50vw;
+    border-radius: 5px;
+    background-image: url('../Images/43688.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.about-content {
+    float: left;
+    width: calc(100% - 20px);
+    margin: 10px;
+    display: inline-table;
+}
+
+.vp-extra-large .about-img {
+    width: calc(25% - 20px);
+    height: 18.25vw;
+}
+
+.vp-large .about-img {
+    width: calc(33.33% - 20px);
+    height: 25vw;
+}
+
+.vp-medium .about-img {
+    width: calc(50% - 20px);
+    height: 37.5vw;
+}
+
+.vp-extra-large .about-content {
+    width: calc(75% - 20px);
+    height: 18.25vw;
+}
+
+.vp-large .about-content{
+    width: calc(66.66% - 20px);
+    height: 25vw;
+}
+
+.vp-medium .about-content {
+    width: calc(50% - 20px);
+    height: 37.5vw;
+}
