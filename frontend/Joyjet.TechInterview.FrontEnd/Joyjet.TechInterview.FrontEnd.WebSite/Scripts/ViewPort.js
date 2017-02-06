@@ -7,8 +7,7 @@
         this.onResize();
     }
 
-    var readOnly = { configurable: false, enumerable: false, writable: false };
-    Object.defineProperty(ViewPort, "viewPorts", Object.assign({
+    Object.readOnlyProperty(ViewPort, "viewPorts", {
         value: [
             { "class": "vp-extra-small", min: 0, max: 540 },
             { "class": "vp-small", min: 540, max: 720 },
@@ -16,9 +15,9 @@
             { "class": "vp-large", min: 960, max: 1140 },
             { "class": "vp-extra-large", min: 1140, max: Infinity }
         ]
-    }, readOnly));
+    });
 
-    Object.defineProperty(ViewPort.prototype, "onResize", Object.assign({
+    Object.readOnlyProperty(ViewPort.prototype, "onResize", {
         value: function (event) {
             var viewPort = ViewPort.viewPorts.filter(function (viewPort) {
                 return viewPort.min < window.outerWidth && viewPort.max > window.outerWidth;
@@ -32,6 +31,6 @@
                 this.container.classList.add(this.currentClass);
             }
         }
-    }, readOnly));
+    });
     return ViewPort;
 });

@@ -33,9 +33,8 @@
         link.href = URL.createObjectURL(blob);
         document.head.appendChild(link);
     }
-
-    var readOnly = { configurable: false, enumerable: false, writable: false };
-    Object.defineProperty(FullPage.prototype, "swipeCallBack", Object.assign({
+    
+    Object.readOnlyProperty(FullPage.prototype, "swipeCallBack", {
         value: function (direction) {
             var increment = 0;
             if (direction == "up" && this.panel < this.panels.length) {
@@ -53,15 +52,15 @@
                 }
             }
         }
-    }, readOnly));
+    });
 
-    Object.defineProperty(FullPage.prototype, "onTransitionEnd", Object.assign({
+    Object.readOnlyProperty(FullPage.prototype, "onTransitionEnd", {
         value: function (event) {
             this.swipe.enable();
         }
-    }, readOnly));
+    });
 
-    Object.defineProperty(FullPage.prototype, "goToPanel", Object.assign({
+    Object.readOnlyProperty(FullPage.prototype, "goToPanel", {
         value: function (panel) {
             this.panel = panel;
             this.swipe.disable();
@@ -70,6 +69,6 @@
                 this.onPanelChange(this.panel);
             }
         }
-    }, readOnly));
+    });
     return FullPage;
 });

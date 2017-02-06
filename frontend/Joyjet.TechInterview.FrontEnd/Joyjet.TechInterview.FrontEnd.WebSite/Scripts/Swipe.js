@@ -17,8 +17,7 @@
         }
     }
 
-    var readOnly = { configurable: false, enumerable: false, writable: false };
-    Object.defineProperty(Swipe.prototype, "checkDirection", Object.assign({
+    Object.readOnlyProperty(Swipe.prototype, "checkDirection", {
         value: function (diff) {
             var increment = {
                 horizontal: diff.horizontal < -50 ? -1 : diff.horizontal > 50 ? 1 : 0,
@@ -33,8 +32,8 @@
                 this.callback(direction);
             }
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "enable", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "enable", {
         value: function () {
             this.element.addEventListener("touchstart", this.events.touchStart);
             this.element.addEventListener("touchmove", this.events.touchMove);
@@ -43,8 +42,8 @@
             this.element.addEventListener("mousedown", this.events.mouseDown);
             this.element.addEventListener("mouseup", this.events.mouseUp);
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "disable", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "disable", {
         value: function () {
             this.element.removeEventListener("touchstart", this.events.touchStart);
             this.element.removeEventListener("touchmove", this.events.touchMove);
@@ -53,24 +52,24 @@
             this.element.removeEventListener("mousedown", this.events.mouseDown);
             this.element.removeEventListener("mouseup", this.events.mouseUp);
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "onTouchStart", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "onTouchStart", {
         value: function (event) {
             this.touchStart = this.touchEnd = {
                 horizontal: event.touches[0].clientX,
                 vertical: event.touches[0].clientY
             }
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "onTouchMove", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "onTouchMove", {
         value: function (event) {
             this.touchEnd = {
                 horizontal: event.touches[0].clientX,
                 vertical: event.touches[0].clientY
             }
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "onTouchEnd", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "onTouchEnd", {
         value: function (event) {
             var diff = {
                 horizontal: this.touchStart.horizontal - this.touchEnd.horizontal,
@@ -79,8 +78,8 @@
             console.log(diff);
             this.checkDirection(diff);
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "onMouseWheel", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "onMouseWheel", {
         value: function (event) {
             var increment = event.wheelDelta < 0 ? 1 : event.wheelDelta > 0 ? -1 : 0;
             if (increment != 0 && this.directions.indexOf("vertical") != -1) {
@@ -88,16 +87,16 @@
                 this.callback(direction);
             }
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "onMouseDown", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "onMouseDown", {
         value: function (event) {
             this.mouseDown = {
                 horizontal: event.clientX,
                 vertical: event.clientY
             };
         }
-    }, readOnly));
-    Object.defineProperty(Swipe.prototype, "onMouseUp", Object.assign({
+    });
+    Object.readOnlyProperty(Swipe.prototype, "onMouseUp", {
         value: function (event) {
             this.mouseUp = {
                 horizontal: event.clientX,
@@ -109,6 +108,6 @@
             };
             this.checkDirection(diff);
         }
-    }, readOnly));
+    });
     return Swipe;
 });
